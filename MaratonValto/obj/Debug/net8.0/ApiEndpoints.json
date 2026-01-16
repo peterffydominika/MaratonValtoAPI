@@ -32,6 +32,22 @@
   },
   {
     "ContainingType": "MaratonValto.Controllers.FutokController",
+    "Method": "DeleteRunner",
+    "RelativePath": "api/Futok/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MaratonValto.Controllers.FutokController",
     "Method": "GetRunnerResults",
     "RelativePath": "api/Futok/{id}/results",
     "HttpMethod": "GET",

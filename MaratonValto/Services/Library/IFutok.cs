@@ -8,5 +8,6 @@ namespace MaratonValto.Services.Library
         Task<object> GetAllRunners();
         Task<object> GetRunnerResults(int futoId);
         Task<object> UpdateRunner(int id, FutoDTO futo);
+        Task<object> DeleteRunner(int id);
     }
 }

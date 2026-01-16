@@ -76,5 +76,40 @@ namespace MaratonValto.Services
                 return _responseDto;
             }
         }
+        public async Task<object> DeleteRunner(int id)
+        {
+            try
+            {
+                var existing = await _context.Futoks.FindAsync(id);
+                if (existing == null)
+                {
+                    _responseDto.Message = "A futó nem található.";
+                    _responseDto.Result = null;
+                    return _responseDto;
+                }
+
+                var relatedResults = await _context.Eredmenyeks
+                    .Where(e => e.Futo == id)
+                    .ToListAsync();
+
+                if (relatedResults.Any())
+                {
+                    _context.Eredmenyeks.RemoveRange(relatedResults);
+                }
+
+                _context.Futoks.Remove(existing);
+                await _context.SaveChangesAsync();
+
+                _responseDto.Message = "Sikeres törlés!";
+                _responseDto.Result = existing;
+                return _responseDto;
+            }
+            catch (Exception ex)
+            {
+                _responseDto.Message = ex.Message;
+                _responseDto.Result = null;
+                return _responseDto;
+            }
+        }
     }
 }
