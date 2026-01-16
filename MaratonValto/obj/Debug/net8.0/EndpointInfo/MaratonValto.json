@@ -142,6 +142,18 @@
           }
         }
       }
+    },
+    "/api/Futok/female": {
+      "get": {
+        "tags": [
+          "Futok"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
     }
   },
   "components": {

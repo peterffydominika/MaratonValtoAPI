@@ -98,5 +98,21 @@ namespace MaratonValto.Controllers
                 });
             }
         }
+        [HttpGet("female")]
+        public async Task<ActionResult> GetFemaleRunners()
+        {
+            try
+            {
+                var requestResult = await _futok.GetFemaleRunners();
+                return Ok(requestResult);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(400, new
+                {
+                    message = ex.Message
+                });
+            }
+        }
     }
 }

@@ -82,5 +82,15 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MaratonValto.Controllers.FutokController",
+    "Method": "GetFemaleRunners",
+    "RelativePath": "api/Futok/female",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]

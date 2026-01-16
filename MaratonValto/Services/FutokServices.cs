@@ -144,5 +144,26 @@ namespace MaratonValto.Services
                 return _responseDto;
             }
         }
+        public async Task<object> GetFemaleRunners()
+        {
+            try
+            {
+                var females = await _context.Futoks
+                    .Where(f => f.Ffi == false)
+                    .OrderBy(f => f.Fnev)
+                    .Select(f => new { f.Fnev, f.Szulev })
+                    .ToListAsync();
+
+                _responseDto.Message = "Sikeres lekérdezés!";
+                _responseDto.Result = females;
+                return _responseDto;
+            }
+            catch (Exception ex)
+            {
+                _responseDto.Message = ex.Message;
+                _responseDto.Result = null;
+                return _responseDto;
+            }
+        }
     }
 }
