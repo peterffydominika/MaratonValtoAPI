@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MaratonValto")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+125db888845aeb9fd5b5a21c87a96b611dabb397")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+450094c5509e7c48aae9d55ec8e48d300d1cc031")]
 [assembly: System.Reflection.AssemblyProductAttribute("MaratonValto")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MaratonValto")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

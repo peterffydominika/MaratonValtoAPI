@@ -39,7 +39,77 @@
           }
         }
       }
+    },
+    "/api/Futok/{id}": {
+      "put": {
+        "tags": [
+          "Futok"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FutoDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FutoDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FutoDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
     }
   },
-  "components": { }
+  "components": {
+    "schemas": {
+      "FutoDTO": {
+        "type": "object",
+        "properties": {
+          "fnev": {
+            "type": "string",
+            "nullable": true
+          },
+          "szulev": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "szulho": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "csapat": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ffi": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
 }

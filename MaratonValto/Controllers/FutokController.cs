@@ -1,9 +1,7 @@
 ﻿using MaratonValto.Models;
+using MaratonValto.Models.DTOs;
 using MaratonValto.Services.Library;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using static Org.BouncyCastle.Math.EC.ECCurve;
 
 namespace MaratonValto.Controllers
 {
@@ -19,7 +17,7 @@ namespace MaratonValto.Controllers
             _context = context;
             _futok = futok;
         }
-        //Futok adatainak lekérérse
+
         [HttpGet]
         public async Task<ActionResult> GetAllRunner()
         {
@@ -42,6 +40,22 @@ namespace MaratonValto.Controllers
             try
             {
                 var requestResult = await _futok.GetRunnerResults(id);
+                return Ok(requestResult);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(400, new
+                {
+                    message = ex.Message
+                });
+            }
+        }
+        [HttpPut("{id}")]
+        public async Task<ActionResult> UpdateRunner(int id, FutoDTO futo)
+        {
+            try
+            {
+                var requestResult = await _futok.UpdateRunner(id, futo);
                 return Ok(requestResult);
             }
             catch (Exception ex)

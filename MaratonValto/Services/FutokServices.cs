@@ -46,5 +46,35 @@ namespace MaratonValto.Services
                 return _responseDto;
             }
         }
+        public async Task<object> UpdateRunner(int id, FutoDTO futo)
+        {
+            try
+            {
+                var existing = await _context.Futoks.FindAsync(id);
+                if (existing == null)
+                {
+                    _responseDto.Message = "A futó nem található.";
+                    _responseDto.Result = null;
+                    return _responseDto;
+                }
+                existing.Fnev = futo.Fnev;
+                existing.Szulev = futo.Szulev;
+                existing.Szulho = futo.Szulho;
+                existing.Csapat = futo.Csapat;
+                existing.Ffi = futo.Ffi;
+
+                await _context.SaveChangesAsync();
+
+                _responseDto.Message = "Sikeres módosítás!";
+                _responseDto.Result = existing;
+                return _responseDto;
+            }
+            catch (Exception ex)
+            {
+                _responseDto.Message = ex.Message;
+                _responseDto.Result = null;
+                return _responseDto;
+            }
+        }
     }
 }
