@@ -1,0 +1,12 @@
+[
+  {
+    "ContainingType": "MaratonValto.Controllers.FutokController",
+    "Method": "GetAllRunner",
+    "RelativePath": "api/Futok",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
