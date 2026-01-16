@@ -82,5 +82,21 @@ namespace MaratonValto.Controllers
                 });
             }
         }
+        [HttpPost("{id}/results")]
+        public async Task<ActionResult> AddResult(int id, EredmenyDTO eredmeny)
+        {
+            try
+            {
+                var requestResult = await _futok.AddResult(id, eredmeny);
+                return Ok(requestResult);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(400, new
+                {
+                    message = ex.Message
+                });
+            }
+        }
     }
 }

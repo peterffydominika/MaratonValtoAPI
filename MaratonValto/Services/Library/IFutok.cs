@@ -9,5 +9,6 @@ namespace MaratonValto.Services.Library
         Task<object> GetRunnerResults(int futoId);
         Task<object> UpdateRunner(int id, FutoDTO futo);
         Task<object> DeleteRunner(int id);
+        Task<object> AddResult(int futoId, EredmenyDTO eredmeny);
     }
 }

@@ -38,6 +38,46 @@
             "description": "Success"
           }
         }
+      },
+      "post": {
+        "tags": [
+          "Futok"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EredmenyDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EredmenyDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EredmenyDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
       }
     },
     "/api/Futok/{id}": {
@@ -106,6 +146,20 @@
   },
   "components": {
     "schemas": {
+      "EredmenyDTO": {
+        "type": "object",
+        "properties": {
+          "kor": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ido": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "FutoDTO": {
         "type": "object",
         "properties": {
