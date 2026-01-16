@@ -26,5 +26,25 @@ namespace MaratonValto.Services
                 return _responseDto;
             }
         }
+        public async Task<object> GetRunnerResults(int futoId)
+        {
+            try
+            {
+                var eredmenyek = await _context.Eredmenyeks
+                    .Where(e => e.Futo == futoId)
+                    .OrderBy(e => e.Kor)
+                    .ToListAsync();
+
+                _responseDto.Message = "Sikeres lekérdezés!";
+                _responseDto.Result = eredmenyek;
+                return _responseDto;
+            }
+            catch (Exception ex)
+            {
+                _responseDto.Message = ex.Message;
+                _responseDto.Result = null;
+                return _responseDto;
+            }
+        }
     }
 }

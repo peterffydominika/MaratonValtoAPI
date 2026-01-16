@@ -133,3 +133,4 @@ C:\Users\peterffyd\Desktop\Backend\APIs\MaratonValto\MaratonValto\obj\Debug\net8
 C:\Users\peterffyd\Desktop\Backend\APIs\MaratonValto\MaratonValto\obj\Debug\net8.0\MaratonValto.pdb
 C:\Users\peterffyd\Desktop\Backend\APIs\MaratonValto\MaratonValto\obj\Debug\net8.0\MaratonValto.genruntimeconfig.cache
 C:\Users\peterffyd\Desktop\Backend\APIs\MaratonValto\MaratonValto\obj\Debug\net8.0\ref\MaratonValto.dll
+C:\Users\peterffyd\Desktop\Backend\APIs\MaratonValto\MaratonValto\obj\Debug\net8.0\MaratonValto.sourcelink.json
